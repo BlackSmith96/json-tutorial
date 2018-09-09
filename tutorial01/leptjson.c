@@ -21,6 +21,7 @@ static int lept_parse_null(lept_context* c, lept_value* v) {
         return LEPT_PARSE_INVALID_VALUE;
     c->json += 3;
     v->type = LEPT_NULL;
+    //防止空格之后还有
     const char *p = c->json;
     while(*p == ' ' || *p == '\t' || *p == '\n' || *p == '\r')
         p++;
